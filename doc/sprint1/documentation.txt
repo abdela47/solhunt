@@ -1,0 +1,33 @@
+AuthContext.js
+    - AuthProvider(): Provides authentication context for the application. In essence, it provides the ability for the entire application to access login, signup, logout and check if there is a user currently logged in when starting the app.
+
+login.js
+    - Login(): Uses login() function from authProvider and logs the user according to the information  provided. Returns login component. User is redirected to home page upon successful login.
+
+sign_up.js
+    - Sign_up(): Uses signup() function from authProvider and creates a user with information provided. Returns signup component. User is redirected to home page upon successful signup.
+
+
+In userProfile.js, UserProfile() gets information from the database based on the specified user's id using react methods and the user class created in userModel.js then returns it in a styled webpage using the styling in UserProfile.module.css
+
+
+index.js
+    - handleOpen(): Sets the state of the modal to false, so that the modal closes whenever necessary.
+    - handleClose(): Sets the state of the modal to true, so that the modal opens whenever necessary.
+    - submitRequestHandler(event): Sends the book request to the database, under the requests collection, the book title and ISBN are saved.
+    -- checkAllFilled(): Checks if all fields in the book request form are filled, if they are enable the button so that submission can be completed, otherwise keep button disabled.
+
+
+moderator.js
+  -    A page that will only be accessed by mods
+  -    loadPopup is a function that is called once the mod clicks on a textbook they want to remove
+  -    it will take the book that got clicked and a Boolean value that will decide if the pop up 					should appear
+  -    these variables will be 
+  -    deleteBook is called once the mod clicks ‘Remove’ on the delete book pop up
+  -    it will set popupBtn to false, clear the bookResults from the search bar and delete the passed in book from the textbooks database
+  -    searchHandler is called when the mod tries searching for a textbook to remove
+  -    finds books depending on the text that the user inputs
+
+PopUp.js
+  -    React component that shows the pop up 
+  -    Variables from moderator.js are passed in to make the ‘remove’ and ‘cancel’ buttons function as required
